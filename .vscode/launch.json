@@ -1,0 +1,32 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch gosix-example service with postgres",
+			"type": "go",
+			"request": "launch",
+			"mode": "auto",
+			"program": "${workspaceFolder}/cmd/service",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"NODE_ENV": "development",
+				"CREATE_DB_VIA": "postgres"
+			},
+			"args": [],
+			"preLaunchTask": "generate code"
+		},
+		{
+			"name": "Launch gosix-example service with sqlite",
+			"type": "go",
+			"request": "launch",
+			"mode": "auto",
+			"program": "${workspaceFolder}/cmd/service",
+			"cwd": "${workspaceFolder}",
+			"env": {
+				"NODE_ENV": "test"
+			},
+			"args": [],
+			"preLaunchTask": "generate code"
+		},
+	]
+}

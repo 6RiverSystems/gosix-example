@@ -1,0 +1,278 @@
+openapi: 3.0.1
+
+info:
+  title: 6 River Systems gin-gonic FS trial API
+  description: |
+    This API describes interactions with the 6RS gin-gonic trial
+  version: 1.x.x
+  contact:
+    name: 6 River Systems
+    url: https://6river.com
+
+tags:
+  - name: Internal
+    description: |
+      This is an internal API used between 6RS components.
+
+paths:
+  # not listed here:
+  # /files/...
+
+  /metrics:
+    get:
+      tags:
+        - Prometheus
+        - Metrics
+        - Status
+      summary: Prometheus metrics export
+      description: Retrive current exported Prometheus metrics
+      responses:
+        200:
+          description: Metrics returned in Prometheus text format
+          content:
+            text/plain:
+              schema:
+                type: string
+
+  /debug/vars:
+    get:
+      tags:
+        - Debug
+        - Status
+      summary: Retrieve debug expvars
+      description: Retrieve debug expvars in JSON format
+      responses:
+        200:
+          description: Current expvar values
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >
+                  This is a free-form JSON object. The specific keys present
+                  will depend on internal application details.
+
+  /:
+    get:
+      tags:
+        - Status
+      summary: Application uptime
+      description: >
+        Retrieve application uptime and possibly additional application-specific
+        metadata
+      responses:
+        200:
+          description: Application is up
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UptimeResponse"
+  /slow:
+    get:
+      tags:
+        - Debug
+        - Status
+      summary: Application uptime, slowly
+      description: >
+        Same as the `/` endpoint, but with the response artificially delayed
+      parameters:
+        - name: delay
+          description: How many milliseconds to delay sending the response
+          in: query
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+      responses:
+        200:
+          description: Application is up
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UptimeResponse"
+
+  /server/shutdown:
+    post:
+      tags:
+        - Control
+      summary: Shutdown the app, gracefully
+      description: >
+        Request a clean app shutdown, with a reasonable amount of time allowed
+        for active requests and background tasks to complete.
+      responses:
+        200:
+          description: Application shutdown has been initiated
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: A witty message
+  /server/kill:
+    post:
+      tags:
+        - Control
+      summary: Shutdown the app, forcefully
+      description: >
+        Request an app shutdown, with a minimal amount of time allowed for
+        active requests and background tasks to complete before forcibly killing
+        the app.
+      responses:
+        200:
+          description: Application kill has been initiated
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: A sad message
+
+  /v1/counter/{name}:
+    summary: Access to a specific counter entity by name
+    get:
+      tags:
+        - Counter
+        - Entity
+      summary: Increment and return a counter
+      description: >
+        Retrieve the current state of a counter, after incrementing it
+      parameters:
+        - name: name
+          description: Name of the counter to retrieve
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+      responses:
+        200:
+          description: >
+            The counter exists and has been incremented, its state is reflected
+            here
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Counter"
+        404:
+          description: The counter does not exist
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+    post:
+      tags:
+        - Counter
+        - Entity
+      summary: Create a new counter
+      description: >
+        Create a new counter with the given name, initialized with a default value
+      parameters:
+        - name: name
+          description: Name of the counter to retrieve
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 1
+      responses:
+        200:
+          description: >
+            The counter exists and has been incremented, its state is reflected
+            here
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Counter"
+        429:
+          description: A counter with the given name already exists
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+
+  # this route mostly exists to demonstrate and test request body validation
+  /v1/counter:
+    post:
+      tags:
+        - Counter
+        - Entity
+      summary: Upsert a counter
+      description: >
+        Create or update a full counter object, upserting by `id` (not by `name`)
+      requestBody:
+        description: Counter object
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Counter"
+      responses:
+        200:
+          description: The persisted counter object
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Counter"
+        429:
+          description: A counter with the given name already exists
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorMessage"
+
+components:
+  schemas:
+    UptimeResponse:
+      type: object
+      description: Response object for a successful uptime request
+      additionalProperties: true
+      required:
+        - startTime
+      properties:
+        startTime:
+          type: string
+          format: date-time
+          description: Timestamp of when the application instance started
+
+    Counter:
+      type: object
+      description: A simple named counter object
+      required:
+        - id
+        - name
+        - value
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+          format: uuid
+          # our OAS tooling doesn't understand format:uuid so we have to make the pattern explicit
+          pattern: ^[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}$
+          description: >
+            The persistence UUID of this counter. This is the primary key and is
+            thus unique.
+        name:
+          type: string
+          description: >
+            The name (business key) of this counter. This must be unique across
+            counters.
+          minLength: 1
+        value:
+          type: integer
+          format: int64
+          description: >
+            The current counter value. Counters start at 0 and are incremented
+            on every query.
+
+    ErrorMessage:
+      type: object
+      description: A generic error message object
+      required:
+        - message
+      additionalProperties: true
+      properties:
+        message:
+          type: string
+          description: A human readable error message
+        name:
+          type: string
+          description: >
+            The name of some object or entity which triggered the error
