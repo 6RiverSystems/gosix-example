@@ -41,6 +41,9 @@ jobs:
       - store_artifacts:
           name: Capture chosen version
           path: .version
+      - run:
+          name: Configure github for ssh
+          command: git config --global url.git@github.com/.insteadOf https://github.com/
       - run: make get
       - run: make install-ci-tools
       - run: make generate
