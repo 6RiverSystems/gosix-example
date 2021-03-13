@@ -12,7 +12,7 @@ jobs:
     environment:
       TEST_RESULTS: /tmp/test-results
       DATABASE_URL: "postgres://circle@localhost:5432/circle_test?sslmode=disable"
-      GOPRIVATE: "go.6river.tech"
+      GOPRIVATE: "go.6river.tech,github.com/6RiverSystems/"
 
     steps:
       - checkout
@@ -41,9 +41,6 @@ jobs:
       - store_artifacts:
           name: Capture chosen version
           path: .version
-      - run:
-          name: Configure github for ssh
-          command: git config --global url.git@github.com/.insteadOf https://github.com/
       - run: make get
       - run: make install-ci-tools
       - run: make generate

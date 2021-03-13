@@ -24,18 +24,6 @@
 			"problemMatcher": "$go"
 		},
 		{
-			"label": "build ps-compat",
-			"type": "process",
-			"command": "pnpm",
-			"args": [
-				"build"
-			],
-			"problemMatcher": "$tsc",
-			"options": {
-				"cwd": "${workspaceFolder}/cmd/ps-compat"
-			}
-		},
-		{
 			"label": "build tools",
 			"type": "process",
 			"command": "make",
