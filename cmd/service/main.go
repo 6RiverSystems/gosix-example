@@ -38,8 +38,9 @@ func main() {
 }
 
 func NewApp() *app.App {
+	const appName = "gosix-example"
 	app := &app.App{
-		Name:    "gosix-example",
+		Name:    appName,
 		Version: version.SemrelVersion,
 		Port:    defaults.Port,
 		InitDbMigration: func(ctx context.Context, m *migrate.Migrator) error {
@@ -72,27 +73,29 @@ func NewApp() *app.App {
 			controllers.RegisterAll(r)
 			return nil
 		},
-	}
-	app.WithDefaults()
-
-	app.Registry.AddService(registry.NewInitializer(
-		"counter-bootstrap",
-		func(ctx context.Context, services *registry.Registry, client_ entcommon.EntClient) error {
-			client := client_.(*ent.Client)
-			// create the default frob counter
-			ec, err := getOrCreateCounterEnt(ctx, client, "frob")
-			logger := logging.GetLogger(app.Name)
-			if err != nil {
-				logger.Err(err).Msg("Failed to init counter")
-				return err
-			}
-			logger.Info().
-				Interface("counter", ec).
-				Msg("Ent Frob counter")
+		RegisterServices: func(ctx context.Context, reg *registry.Registry, values registry.MutableValues) error {
+			reg.AddService(registry.NewInitializer(
+				"counter-bootstrap",
+				func(ctx context.Context, services *registry.Registry, client_ entcommon.EntClient) error {
+					client := client_.(*ent.Client)
+					// create the default frob counter
+					ec, err := getOrCreateCounterEnt(ctx, client, "frob")
+					logger := logging.GetLogger(appName)
+					if err != nil {
+						logger.Err(err).Msg("Failed to init counter")
+						return err
+					}
+					logger.Info().
+						Interface("counter", ec).
+						Msg("Ent Frob counter")
+					return nil
+				},
+				nil,
+			))
 			return nil
 		},
-		nil,
-	))
+	}
+	app.WithDefaults()
 	return app
 }
 
