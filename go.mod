@@ -3,7 +3,7 @@ module go.6river.tech/gosix-example
 go 1.16
 
 require (
-	entgo.io/ent v0.7.0
+	entgo.io/ent v0.8.0
 	github.com/getkin/kin-openapi v0.53.0
 	github.com/gin-gonic/gin v1.7.1
 	github.com/golangci/golangci-lint v1.39.0
@@ -13,7 +13,7 @@ require (
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.7.0
-	go.6river.tech/gosix v0.0.11
+	go.6river.tech/gosix v0.0.14
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/term v0.0.0-20210406210042-72f3dc4e9b72 // indirect
 	golang.org/x/tools v0.1.1-0.20210302220138-2ac05c832e1a
