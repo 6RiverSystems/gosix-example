@@ -41,10 +41,13 @@ jobs:
       - run:
           name: Determine new version
           # for Go modules, we only need version numbers on `main`, as Go can
-          # pull any other git commit by hash
+          # pull any other git commit by hash. We do need a version tag for
+          # docker for this package however, just don't need it to be a git tag
           command: |
             if [ "$CIRCLE_BRANCH" = "main" ]; then
               ./ci_scripts/ci_tool.sh --run_release
+            else
+              make docker-dev-version
             fi
       - store_artifacts:
           name: Capture chosen version
