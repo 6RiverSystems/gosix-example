@@ -65,7 +65,7 @@ func NewApp() *app.App {
 			return ent.NewClient(opts...), nil
 		},
 		WithPubsubClient: true,
-		LoadOASSpec: func(context.Context) (*openapi3.Swagger, error) {
+		LoadOASSpec: func(context.Context) (*openapi3.T, error) {
 			return oas.LoadSpec()
 		},
 		OASFS: http.FS(oas.OpenAPIFS),

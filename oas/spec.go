@@ -7,19 +7,19 @@ import (
 
 // LoadSpec parses the spec resource, as a stand-in for the spec generation from
 // oapi-codegen, to avoid double-embedding the YAML in the binary.
-func LoadSpec() (*openapi3.Swagger, error) {
+func LoadSpec() (*openapi3.T, error) {
 	yamlBytes, err := OpenAPIFS.ReadFile("openapi.yaml")
 	if err != nil {
 		return nil, errors.Wrap(err, "error loading Swagger")
 	}
-	swagger, err := openapi3.NewSwaggerLoader().LoadSwaggerFromData(yamlBytes)
+	swagger, err := openapi3.NewLoader().LoadFromData(yamlBytes)
 	if err != nil {
 		return nil, errors.Wrap(err, "error loading Swagger")
 	}
 	return swagger, nil
 }
 
-func MustLoadSpec() *openapi3.Swagger {
+func MustLoadSpec() *openapi3.T {
 	swagger, err := LoadSpec()
 	if err != nil {
 		panic(err)
