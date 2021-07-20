@@ -1,6 +1,7 @@
 # Go Six Example
 
-An example for how to use [6RiverSystems/gosix](gosix) to build a simple
+An example for how to use
+[6RiverSystems/gosix](https://github.com/6RiverSystems/gosix) to build a simple
 application
 
 ## Developing
