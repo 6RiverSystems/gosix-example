@@ -20,5 +20,5 @@ require (
 	golang.org/x/tools v0.1.5
 	google.golang.org/api v0.51.0
 	google.golang.org/grpc v1.39.0
-	gotest.tools/gotestsum v1.6.4
+	gotest.tools/gotestsum v1.7.0
 )
