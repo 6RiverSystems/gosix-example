@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	entgo.io/ent v0.9.0
-	github.com/getkin/kin-openapi v0.69.0
+	github.com/getkin/kin-openapi v0.70.0
 	github.com/gin-gonic/gin v1.7.3
 	github.com/golangci/golangci-lint v1.41.1
 	github.com/google/addlicense v0.0.0-20210729153508-ef04bb38a16b
