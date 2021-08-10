@@ -7,7 +7,7 @@ require (
 	github.com/getkin/kin-openapi v0.70.0
 	github.com/gin-gonic/gin v1.7.3
 	github.com/golangci/golangci-lint v1.41.1
-	github.com/google/addlicense v0.0.0-20210729153508-ef04bb38a16b
+	github.com/google/addlicense v0.0.0-20210809195240-d43bb61fdfda
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v4 v4.13.0
 	github.com/mattn/go-sqlite3 v1.14.8
