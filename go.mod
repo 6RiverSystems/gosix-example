@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	entgo.io/ent v0.9.1
+	github.com/deepmap/oapi-codegen v1.8.2
 	github.com/getkin/kin-openapi v0.74.0
 	github.com/gin-gonic/gin v1.7.4
 	github.com/golangci/golangci-lint v1.42.0
@@ -15,7 +16,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.6
 	github.com/stretchr/testify v1.7.0
-	go.6river.tech/gosix v0.3.12
+	go.6river.tech/gosix v0.3.13
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.5
 	google.golang.org/api v0.54.0
@@ -45,7 +46,6 @@ require (
 	github.com/chavacava/garif v0.0.0-20210405164556-e8a0a408d6af // indirect
 	github.com/daixiang0/gci v0.2.9 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/deepmap/oapi-codegen v1.8.2 // indirect
 	github.com/denis-tingajkin/go-header v0.4.2 // indirect
 	github.com/dnephin/pflag v1.0.7 // indirect
 	github.com/esimonov/ifshort v1.0.2 // indirect
