@@ -7,7 +7,7 @@ require (
 	github.com/deepmap/oapi-codegen v1.8.2
 	github.com/getkin/kin-openapi v0.75.0
 	github.com/gin-gonic/gin v1.7.4
-	github.com/golangci/golangci-lint v1.42.0
+	github.com/golangci/golangci-lint v1.42.1
 	github.com/google/addlicense v1.0.0
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v4 v4.13.0
