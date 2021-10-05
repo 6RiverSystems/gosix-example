@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	entgo.io/ent v0.9.1
-	github.com/deepmap/oapi-codegen v1.8.2
+	github.com/deepmap/oapi-codegen v1.8.3
 	github.com/getkin/kin-openapi v0.76.0
 	github.com/gin-gonic/gin v1.7.4
 	github.com/golangci/golangci-lint v1.42.1
