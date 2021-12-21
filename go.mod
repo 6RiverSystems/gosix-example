@@ -16,11 +16,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.10
 	github.com/stretchr/testify v1.7.0
-	go.6river.tech/gosix v0.3.40
+	go.6river.tech/gosix v0.3.41
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.8
 	google.golang.org/api v0.63.0
-	google.golang.org/grpc v1.42.0
+	google.golang.org/grpc v1.43.0
 	gotest.tools/gotestsum v1.7.0
 )
 
@@ -66,7 +66,7 @@ require (
 	github.com/fzipp/gocyclo v0.3.1 // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/gin-contrib/expvar v0.0.1 // indirect
-	github.com/gin-contrib/gzip v0.0.3 // indirect
+	github.com/gin-contrib/gzip v0.0.5 // indirect
 	github.com/gin-contrib/location v0.0.2 // indirect
 	github.com/gin-contrib/logger v0.2.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
@@ -171,7 +171,7 @@ require (
 	github.com/quasilyte/regex/syntax v0.0.0-20210819130434-b3f0c404a727 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/rs/cors v1.8.0 // indirect
-	github.com/rs/zerolog v1.26.0 // indirect
+	github.com/rs/zerolog v1.26.1 // indirect
 	github.com/ryancurrah/gomodguard v1.2.3 // indirect
 	github.com/ryanrolds/sqlclosecheck v0.3.0 // indirect
 	github.com/sanposhiho/wastedassign/v2 v2.0.7 // indirect
@@ -204,7 +204,7 @@ require (
 	github.com/valyala/fasttemplate v1.2.1 // indirect
 	github.com/yeya24/promlinter v0.1.0 // indirect
 	go.opencensus.io v0.23.0 // indirect
-	golang.org/x/crypto v0.0.0-20211117183948-ae814b36b871 // indirect
+	golang.org/x/crypto v0.0.0-20211215165025-cf75a172585e // indirect
 	golang.org/x/mod v0.5.1 // indirect
 	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2 // indirect
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
