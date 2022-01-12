@@ -14,7 +14,7 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.10
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
-	github.com/quasilyte/go-ruleguard/dsl v0.3.12
+	github.com/quasilyte/go-ruleguard/dsl v0.3.13
 	github.com/stretchr/testify v1.7.0
 	go.6river.tech/gosix v0.3.43
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
