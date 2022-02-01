@@ -20,7 +20,7 @@ require (
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9-0.20211216111533-8d383106f7e7
 	google.golang.org/api v0.65.0
-	google.golang.org/grpc v1.43.0
+	google.golang.org/grpc v1.44.0
 	gotest.tools/gotestsum v1.7.0
 )
 
