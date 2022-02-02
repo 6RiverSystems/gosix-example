@@ -16,11 +16,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.15
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
-	go.6river.tech/gosix v0.3.46
+	go.6river.tech/gosix v0.3.47
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9-0.20211216111533-8d383106f7e7
-	google.golang.org/api v0.65.0
-	google.golang.org/grpc v1.43.0
+	google.golang.org/api v0.66.0
+	google.golang.org/grpc v1.44.0
 	gotest.tools/gotestsum v1.7.0
 )
 
@@ -165,7 +165,7 @@ require (
 	github.com/phayes/checkstyle v0.0.0-20170904204023-bfd46e6a821d // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/polyfloyd/go-errorlint v0.0.0-20210903085826-e4f368f0ae69 // indirect
-	github.com/prometheus/client_golang v1.12.0 // indirect
+	github.com/prometheus/client_golang v1.12.1 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.32.1 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect
