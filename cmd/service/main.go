@@ -44,9 +44,6 @@ import (
 	"go.6river.tech/gosix/migrate"
 	"go.6river.tech/gosix/registry"
 
-	_ "github.com/jackc/pgx/v4"
-	_ "github.com/mattn/go-sqlite3"
-
 	_ "go.6river.tech/gosix-example/ent/runtime"
 )
 
