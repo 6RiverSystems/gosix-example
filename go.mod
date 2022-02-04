@@ -16,12 +16,13 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.15
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
-	go.6river.tech/gosix v0.3.48-0.20220203143553-8faeff5ceeba
+	go.6river.tech/gosix v0.4.0
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9
 	google.golang.org/api v0.66.0
 	google.golang.org/grpc v1.44.0
 	gotest.tools/gotestsum v1.7.0
+	modernc.org/sqlite v1.14.6
 )
 
 require (
@@ -232,7 +233,6 @@ require (
 	modernc.org/mathutil v1.4.1 // indirect
 	modernc.org/memory v1.0.5 // indirect
 	modernc.org/opt v0.1.1 // indirect
-	modernc.org/sqlite v1.14.6 // indirect
 	modernc.org/strutil v1.1.1 // indirect
 	modernc.org/token v1.0.0 // indirect
 	mvdan.cc/gofumpt v0.2.0 // indirect
