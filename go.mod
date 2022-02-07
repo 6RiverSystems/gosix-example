@@ -5,7 +5,7 @@ go 1.17
 require (
 	entgo.io/ent v0.10.0
 	github.com/deepmap/oapi-codegen v1.9.1
-	github.com/getkin/kin-openapi v0.88.0
+	github.com/getkin/kin-openapi v0.89.0
 	github.com/gin-gonic/gin v1.7.7
 	github.com/golangci/golangci-lint v1.43.1-0.20211202084104-b04967a907fd
 	github.com/google/addlicense v1.0.0
@@ -14,12 +14,12 @@ require (
 	github.com/mattn/go-sqlite3 v1.14.11
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
-	github.com/quasilyte/go-ruleguard/dsl v0.3.15
+	github.com/quasilyte/go-ruleguard/dsl v0.3.16
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
-	go.6river.tech/gosix v0.4.0
+	go.6river.tech/gosix v0.4.1
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9
-	google.golang.org/api v0.66.0
+	google.golang.org/api v0.67.0
 	google.golang.org/grpc v1.44.0
 	gotest.tools/gotestsum v1.7.0
 	modernc.org/sqlite v1.14.6
@@ -220,7 +220,7 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20220118154757-00ab72f36ad5 // indirect
+	google.golang.org/genproto v0.0.0-20220126215142-9970aeb2e350 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/ini.v1 v1.66.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
