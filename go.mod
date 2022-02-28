@@ -5,7 +5,7 @@ go 1.17
 require (
 	entgo.io/ent v0.10.0
 	github.com/deepmap/oapi-codegen v1.9.1
-	github.com/getkin/kin-openapi v0.89.0
+	github.com/getkin/kin-openapi v0.90.0
 	github.com/gin-gonic/gin v1.7.7
 	github.com/golangci/golangci-lint v1.43.1-0.20211202084104-b04967a907fd
 	github.com/google/addlicense v1.0.0
@@ -16,7 +16,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.17
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
-	go.6river.tech/gosix v0.4.4
+	go.6river.tech/gosix v0.4.5
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9
 	google.golang.org/api v0.70.0
