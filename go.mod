@@ -3,7 +3,7 @@ module go.6river.tech/gosix-example
 go 1.17
 
 require (
-	entgo.io/ent v0.10.0
+	entgo.io/ent v0.10.1
 	github.com/deepmap/oapi-codegen v1.9.1
 	github.com/getkin/kin-openapi v0.90.0
 	github.com/gin-gonic/gin v1.7.7
@@ -16,7 +16,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.17
 	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
-	go.6river.tech/gosix v0.4.6
+	go.6river.tech/gosix v0.4.7
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9
 	google.golang.org/api v0.70.0
@@ -27,7 +27,7 @@ require (
 
 require (
 	4d63.com/gochecknoglobals v0.1.0 // indirect
-	ariga.io/atlas v0.3.6 // indirect
+	ariga.io/atlas v0.3.7-0.20220303204946-787354f533c3 // indirect
 	cloud.google.com/go v0.100.2 // indirect
 	cloud.google.com/go/compute v1.5.0 // indirect
 	cloud.google.com/go/iam v0.2.0 // indirect
@@ -109,7 +109,7 @@ require (
 	github.com/gostaticanalysis/forcetypeassert v0.1.0 // indirect
 	github.com/gostaticanalysis/nilerr v0.1.1 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.3 // indirect
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.8.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
@@ -225,7 +225,7 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20220222213610-43724f9ea8cf // indirect
+	google.golang.org/genproto v0.0.0-20220302033224-9aa15565e42a // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
