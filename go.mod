@@ -19,7 +19,7 @@ require (
 	go.6river.tech/gosix v0.4.6
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.9
-	google.golang.org/api v0.70.0
+	google.golang.org/api v0.71.0
 	google.golang.org/grpc v1.44.0
 	gotest.tools/gotestsum v1.7.0
 	modernc.org/sqlite v1.14.7
@@ -225,7 +225,7 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	google.golang.org/genproto v0.0.0-20220222213610-43724f9ea8cf // indirect
+	google.golang.org/genproto v0.0.0-20220304144024-325a89244dc8 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
