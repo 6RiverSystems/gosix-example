@@ -11,6 +11,7 @@ require (
 	github.com/google/addlicense v1.0.0
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v4 v4.15.0
+	github.com/magefile/mage v1.12.1
 	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
