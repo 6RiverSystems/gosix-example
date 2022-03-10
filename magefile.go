@@ -657,7 +657,7 @@ func dockerRunMultiArch(ctx context.Context, cmd string, push bool) error {
 	} else {
 		version = strings.TrimSpace(string(content))
 	}
-	baseImage := "mmmbbb-" + cmd
+	baseImage := "gosix-example-" + cmd
 	baseTag := baseImage + ":" + version
 	if push {
 		const gcrBase = "gcr.io/plasma-column-128721/"
