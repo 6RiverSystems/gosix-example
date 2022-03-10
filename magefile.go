@@ -606,7 +606,7 @@ func ReleaseBinaries(ctx context.Context) error {
 
 type Docker mg.Namespace
 
-const multiArchBuilderName = "mmmbbb-multiarch"
+const multiArchBuilderName = "gosix-multiarch"
 
 func (Docker) MultiarchInitLocal(ctx context.Context) error {
 	// this is for initializing a local machine for dev, CI needs a different flow
