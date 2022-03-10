@@ -568,12 +568,6 @@ func Clean(ctx context.Context) error {
 			}
 		}
 	}
-	for _, d := range []string{"grpc/pubsub", "grpc/health"} {
-		// just rmdir here, and ignore both doesn't exist and isn't empty
-		if err := os.Remove(d); err != nil && !os.IsNotExist(err) && !os.IsExist(err) {
-			return err
-		}
-	}
 
 	return nil
 }
