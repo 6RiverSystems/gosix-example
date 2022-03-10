@@ -7,7 +7,9 @@
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
   "go.formatTool": "goreturns",
-  "go.generateTestsFlags": ["-template=testify"],
+  "go.generateTestsFlags": [
+    "-template=testify"
+  ],
   "cSpell.flagWords": [],
   "cSpell.words": [
     "Acks",
@@ -37,8 +39,6 @@
     "jackc",
     "jmoiron",
     "mattn",
-    "mmmbbb",
-    "mmmbbbclient",
     "modernc",
     "nacks",
     "nanos",
@@ -58,5 +58,9 @@
     "xargs",
     "xkcd"
   ],
-  "go.buildTags": "nomsgpack"
+  "go.buildTags": "nomsgpack,mage",
+  "go.toolsEnvVars": {
+    "GOPRIVATE": "go.6river.tech/*,github.com/6RiverSystems/*",
+    // "CGO_ENABLED": "0"
+  },
 }
