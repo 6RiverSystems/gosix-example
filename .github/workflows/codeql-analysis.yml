@@ -62,7 +62,7 @@ jobs:
       # - name: Autobuild
       #   uses: github/codeql-action/autobuild@v1
 
-      - run: ./mage -v installProtobufTools compile
+      - run: ./mage -v compile
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
