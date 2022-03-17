@@ -6,7 +6,7 @@
   "go.autocompleteUnimportedPackages": true,
   "go.lintTool": "golangci-lint",
   "go.useLanguageServer": true,
-  "go.formatTool": "goreturns",
+  "go.formatTool": "gofumpt",
   "go.generateTestsFlags": [
     "-template=testify"
   ],

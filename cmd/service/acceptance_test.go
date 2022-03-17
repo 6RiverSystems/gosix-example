@@ -71,7 +71,7 @@ func TestEndpoints(t *testing.T) {
 	eg.Go(app.Main)
 
 	client := http.DefaultClient
-	var baseUrl = "http://localhost:" + strconv.Itoa(server.ResolvePort(defaults.Port, 0))
+	baseUrl := "http://localhost:" + strconv.Itoa(server.ResolvePort(defaults.Port, 0))
 
 	// wait for app to start
 	for {

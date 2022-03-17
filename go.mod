@@ -1,6 +1,6 @@
 module go.6river.tech/gosix-example
 
-go 1.17
+go 1.18
 
 require (
 	entgo.io/ent v0.10.1
@@ -11,19 +11,20 @@ require (
 	github.com/google/addlicense v1.0.0
 	github.com/google/uuid v1.3.0
 	github.com/jackc/pgx/v4 v4.15.0
-	github.com/magefile/mage v1.12.1
+	github.com/magefile/mage v1.13.0
 	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.17
-	github.com/stretchr/testify v1.7.1-0.20210427113832-6241f9ab9942
-	go.6river.tech/gosix v0.5.1
+	github.com/stretchr/testify v1.7.1
+	go.6river.tech/gosix v0.5.3
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.10
 	google.golang.org/api v0.73.0
 	google.golang.org/grpc v1.45.0
 	gotest.tools/gotestsum v1.7.0
 	modernc.org/sqlite v1.15.1
+	mvdan.cc/gofumpt v0.3.0
 )
 
 require (
@@ -55,7 +56,7 @@ require (
 	github.com/butuzov/ireturn v0.1.1 // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/charithe/durationcheck v0.0.9 // indirect
-	github.com/chavacava/garif v0.0.0-20210405164556-e8a0a408d6af // indirect
+	github.com/chavacava/garif v0.0.0-20220316182200-5cad0b5181d4 // indirect
 	github.com/daixiang0/gci v0.3.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/denis-tingajkin/go-header v0.4.2 // indirect
@@ -168,7 +169,7 @@ require (
 	github.com/pelletier/go-toml v1.9.4 // indirect
 	github.com/phayes/checkstyle v0.0.0-20170904204023-bfd46e6a821d // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/polyfloyd/go-errorlint v0.0.0-20211125173453-6d6d39c5bb8b // indirect
+	github.com/polyfloyd/go-errorlint v0.0.0-20220315183752-0328c58dd9f1 // indirect
 	github.com/prometheus/client_golang v1.12.1 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.32.1 // indirect
@@ -221,7 +222,7 @@ require (
 	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 // indirect
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
 	golang.org/x/oauth2 v0.0.0-20220309155454-6242fa91716a // indirect
-	golang.org/x/sys v0.0.0-20220310020820-b874c991c1a5 // indirect
+	golang.org/x/sys v0.0.0-20220315194320-039c03cc5b86 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
@@ -241,8 +242,7 @@ require (
 	modernc.org/opt v0.1.1 // indirect
 	modernc.org/strutil v1.1.1 // indirect
 	modernc.org/token v1.0.0 // indirect
-	mvdan.cc/gofumpt v0.3.0 // indirect
 	mvdan.cc/interfacer v0.0.0-20180901003855-c20040233aed // indirect
 	mvdan.cc/lint v0.0.0-20170908181259-adc824a0674b // indirect
-	mvdan.cc/unparam v0.0.0-20211214103731-d0ef000c54e5 // indirect
+	mvdan.cc/unparam v0.0.0-20220316160445-06cc5682983b // indirect
 )

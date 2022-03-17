@@ -175,7 +175,7 @@ func (cc *EntCounterController) UpsertCounter(c *gin.Context) {
 		cc.logger.Err(err).Interface("request", bodyObject).Msg("failed to upsert counter")
 		c.Error(err) //nolint:errcheck
 
-		//TODO: share this with the create code
+		// TODO: share this with the create code
 
 		// two ways of checking this
 		// checking for a real error from pgx here doesn't work, ent doesn't use error wrapping for this yet,
@@ -215,7 +215,6 @@ func (cc *EntCounterController) UpsertCounter(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, response)
-
 }
 
 func mutationFromOAS(mutation *ent.CounterMutation, dto *oas.Counter) {

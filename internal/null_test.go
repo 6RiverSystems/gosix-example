@@ -27,12 +27,13 @@
 package internal
 
 import (
+	_ "github.com/deepmap/oapi-codegen/pkg/codegen"
 	_ "github.com/golangci/golangci-lint/pkg/commands"
 	_ "github.com/google/addlicense"
 	_ "golang.org/x/tools/imports"
 	_ "gotest.tools/gotestsum/cmd"
+	_ "mvdan.cc/gofumpt"
 
-	_ "github.com/deepmap/oapi-codegen/pkg/codegen"
 	// needed for golangci-lint
 	_ "github.com/quasilyte/go-ruleguard/dsl"
 )

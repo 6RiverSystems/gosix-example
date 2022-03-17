@@ -120,7 +120,6 @@ func (tc *TopicController) CreateTopic(c *gin.Context) {
 	defer cancel()
 	id := c.Param("id")
 	t, err := pubsub.MustDefaultClient().CreateTopic(ctx, id)
-
 	if err != nil {
 		if status.Code(err) == codes.AlreadyExists {
 			c.JSON(http.StatusConflict, gin.H{"id": id, "message": "Topic already exists"})
@@ -222,7 +221,6 @@ func (tc *TopicController) PublishMessage(c *gin.Context) {
 		Data: body,
 		// TODO: allow sending Attributes via custom headers?
 	}).Get(ctx)
-
 	if err != nil {
 		panic(errors.Wrapf(err, "Failed to publish message to '%s'", id))
 	}
