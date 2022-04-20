@@ -27,6 +27,7 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/deepmap/oapi-codegen/pkg/types"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 
@@ -87,7 +88,7 @@ func (cc *EntCounterController) GetCounter(c *gin.Context) {
 	// This is a bit silly as the OAS and Ent types are so directly convertible,
 	// but it demonstrates the pattern
 	response := oas.Counter{
-		Id:    result.ID.String(),
+		Id:    types.UUID(result.ID.String()),
 		Name:  result.Name,
 		Value: result.Value,
 	}
@@ -132,7 +133,7 @@ func (cc *EntCounterController) CreateCounter(c *gin.Context) {
 	// This is a bit silly as the OAS and Ent types are so directly convertible,
 	// but it demonstrates the pattern
 	response := oas.Counter{
-		Id:    result.ID.String(),
+		Id:    types.UUID(result.ID.String()),
 		Name:  result.Name,
 		Value: result.Value,
 	}
@@ -149,7 +150,7 @@ func (cc *EntCounterController) UpsertCounter(c *gin.Context) {
 	if err := decoder.Decode(&bodyObject); err != nil {
 		panic(err)
 	}
-	id := uuid.MustParse(bodyObject.Id)
+	id := uuid.MustParse(string(bodyObject.Id))
 
 	tx := middleware.Transaction(c, db.GetDefaultDbName())
 	event := tx.CounterEvent.EventForCounterId(id).
@@ -209,7 +210,7 @@ func (cc *EntCounterController) UpsertCounter(c *gin.Context) {
 	// This is a bit silly as the OAS and Ent types are so directly convertible,
 	// but it demonstrates the pattern
 	response := oas.Counter{
-		Id:    counter.ID.String(),
+		Id:    types.UUID(counter.ID.String()),
 		Name:  counter.Name,
 		Value: counter.Value,
 	}
@@ -218,7 +219,7 @@ func (cc *EntCounterController) UpsertCounter(c *gin.Context) {
 }
 
 func mutationFromOAS(mutation *ent.CounterMutation, dto *oas.Counter) {
-	mutation.SetID(uuid.MustParse(dto.Id))
+	mutation.SetID(uuid.MustParse(string(dto.Id)))
 	mutation.SetName(dto.Name)
 	mutation.SetValue(dto.Value)
 }
