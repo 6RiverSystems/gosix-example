@@ -22,7 +22,7 @@ require (
 	golang.org/x/tools v0.1.11-0.20220316014157-77aa08bb151a
 	google.golang.org/api v0.79.0
 	google.golang.org/grpc v1.46.0
-	gotest.tools/gotestsum v1.8.0
+	gotest.tools/gotestsum v1.8.1
 	modernc.org/sqlite v1.17.0
 	mvdan.cc/gofumpt v0.3.1
 )
