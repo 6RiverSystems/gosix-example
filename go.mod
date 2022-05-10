@@ -10,7 +10,7 @@ require (
 	github.com/golangci/golangci-lint v1.45.2
 	github.com/google/addlicense v1.0.0
 	github.com/google/uuid v1.3.0
-	github.com/jackc/pgx/v4 v4.16.0
+	github.com/jackc/pgx/v4 v4.16.1
 	github.com/magefile/mage v1.13.0
 	github.com/mattn/go-sqlite3 v1.14.12
 	github.com/olekukonko/tablewriter v0.0.5
@@ -120,7 +120,7 @@ require (
 	github.com/hexops/gotextdiff v1.0.3 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
-	github.com/jackc/pgconn v1.12.0 // indirect
+	github.com/jackc/pgconn v1.12.1 // indirect
 	github.com/jackc/pgio v1.0.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgproto3/v2 v2.3.0 // indirect
