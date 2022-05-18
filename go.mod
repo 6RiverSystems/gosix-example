@@ -20,7 +20,7 @@ require (
 	go.6river.tech/gosix v0.5.15
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	golang.org/x/tools v0.1.11-0.20220316014157-77aa08bb151a
-	google.golang.org/api v0.79.0
+	google.golang.org/api v0.80.0
 	google.golang.org/grpc v1.46.2
 	gotest.tools/gotestsum v1.8.1
 	modernc.org/sqlite v1.17.2
