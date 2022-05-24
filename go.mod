@@ -23,7 +23,7 @@ require (
 	google.golang.org/api v0.80.0
 	google.golang.org/grpc v1.46.2
 	gotest.tools/gotestsum v1.8.1
-	modernc.org/sqlite v1.17.2
+	modernc.org/sqlite v1.17.3
 	mvdan.cc/gofumpt v0.3.1
 )
 
