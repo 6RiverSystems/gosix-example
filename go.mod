@@ -17,7 +17,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.21
 	github.com/stretchr/testify v1.8.0
-	go.6river.tech/gosix v0.5.26
+	go.6river.tech/gosix v0.5.28
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f
 	golang.org/x/tools v0.1.11-0.20220316014157-77aa08bb151a
 	google.golang.org/api v0.86.0
@@ -70,7 +70,7 @@ require (
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/fzipp/gocyclo v0.5.1 // indirect
 	github.com/gin-contrib/expvar v0.0.1 // indirect
-	github.com/gin-contrib/gzip v0.0.5 // indirect
+	github.com/gin-contrib/gzip v0.0.6 // indirect
 	github.com/gin-contrib/location v0.0.2 // indirect
 	github.com/gin-contrib/logger v0.2.2 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
