@@ -3,7 +3,7 @@ module go.6river.tech/gosix-example
 go 1.18
 
 require (
-	entgo.io/ent v0.11.1
+	entgo.io/ent v0.11.2
 	github.com/deepmap/oapi-codegen v1.11.0
 	github.com/getkin/kin-openapi v0.98.0
 	github.com/gin-gonic/gin v1.8.1
@@ -19,7 +19,7 @@ require (
 	github.com/stretchr/testify v1.8.0
 	go.6river.tech/gosix v0.5.35
 	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
-	golang.org/x/tools v0.1.12
+	golang.org/x/tools v0.1.13-0.20220804200503-81c7dc4e4efa
 	google.golang.org/api v0.91.0
 	google.golang.org/grpc v1.48.0
 	gotest.tools/gotestsum v1.8.1
@@ -29,7 +29,7 @@ require (
 
 require (
 	4d63.com/gochecknoglobals v0.1.0 // indirect
-	ariga.io/atlas v0.5.0 // indirect
+	ariga.io/atlas v0.5.1-0.20220717122844-8593d7eb1a8e // indirect
 	cloud.google.com/go v0.102.1 // indirect
 	cloud.google.com/go/compute v1.7.0 // indirect
 	cloud.google.com/go/iam v0.3.0 // indirect
