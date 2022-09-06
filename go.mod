@@ -5,19 +5,19 @@ go 1.18
 require (
 	entgo.io/ent v0.11.2
 	github.com/deepmap/oapi-codegen v1.11.0
-	github.com/getkin/kin-openapi v0.99.0
+	github.com/getkin/kin-openapi v0.100.0
 	github.com/gin-gonic/gin v1.8.1
 	github.com/golangci/golangci-lint v1.49.0
 	github.com/google/addlicense v1.0.0
 	github.com/google/uuid v1.3.0
-	github.com/jackc/pgx/v4 v4.17.1
+	github.com/jackc/pgx/v4 v4.17.2
 	github.com/magefile/mage v1.13.0
 	github.com/mattn/go-sqlite3 v1.14.15
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.21
 	github.com/stretchr/testify v1.8.0
-	go.6river.tech/gosix v0.5.38
+	go.6river.tech/gosix v0.5.40
 	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 	golang.org/x/tools v0.1.13-0.20220804200503-81c7dc4e4efa
 	google.golang.org/api v0.94.0
@@ -189,7 +189,7 @@ require (
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/rs/cors v1.8.2 // indirect
 	github.com/rs/cors/wrapper/gin v0.0.0-20220223021805-a4a5ce87d5a2 // indirect
-	github.com/rs/zerolog v1.27.0 // indirect
+	github.com/rs/zerolog v1.28.0 // indirect
 	github.com/ryancurrah/gomodguard v1.2.4 // indirect
 	github.com/ryanrolds/sqlclosecheck v0.3.0 // indirect
 	github.com/sanposhiho/wastedassign/v2 v2.0.7 // indirect
