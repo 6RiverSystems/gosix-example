@@ -411,6 +411,7 @@ func (Lint) golangci(ctx context.Context, junit bool) error {
 
 // AddLicense runs the addlicense tool in check mode
 func (Lint) AddLicense(ctx context.Context) error {
+	fmt.Println("Linting(addlicense)...")
 	// like sh.Run, but with stderr to stdout, because addlicense generates
 	// non-error notices on stderr we don't want to see normally
 	var buf *bytes.Buffer
@@ -445,6 +446,7 @@ func (Lint) AddLicense(ctx context.Context) error {
 
 // VulnCheck runs govulncheck
 func (Lint) VulnCheck(ctx context.Context) error {
+	fmt.Println("Linting(vulncheck)...")
 	return sh.Run(
 		"go", "run", "golang.org/x/vuln/cmd/govulncheck",
 		"-test",
