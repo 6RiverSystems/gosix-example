@@ -5,7 +5,7 @@ go 1.18
 require (
 	entgo.io/ent v0.11.2
 	github.com/deepmap/oapi-codegen v1.11.0
-	github.com/getkin/kin-openapi v0.102.0
+	github.com/getkin/kin-openapi v0.103.0
 	github.com/gin-gonic/gin v1.8.1
 	github.com/golangci/golangci-lint v1.49.0
 	github.com/google/addlicense v1.0.0
@@ -17,11 +17,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.21
 	github.com/stretchr/testify v1.8.0
-	go.6river.tech/gosix v0.5.42
+	go.6river.tech/gosix v0.5.46
 	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
 	golang.org/x/tools v0.1.13-0.20220804200503-81c7dc4e4efa
 	golang.org/x/vuln v0.0.0-20220908210932-64dbbd7bba4f
-	google.golang.org/api v0.96.0
+	google.golang.org/api v0.97.0
 	google.golang.org/grpc v1.49.0
 	gotest.tools/gotestsum v1.8.2
 	modernc.org/sqlite v1.19.1
@@ -75,7 +75,7 @@ require (
 	github.com/gin-contrib/expvar v0.0.1 // indirect
 	github.com/gin-contrib/gzip v0.0.6 // indirect
 	github.com/gin-contrib/location v0.0.2 // indirect
-	github.com/gin-contrib/logger v0.2.2 // indirect
+	github.com/gin-contrib/logger v0.2.5 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-critic/go-critic v0.6.4 // indirect
 	github.com/go-openapi/inflect v0.19.0 // indirect
