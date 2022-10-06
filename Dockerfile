@@ -17,9 +17,7 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-# stable-slim is temporarily broken with the bullseye release:
-# https://github.com/debuerreotype/docker-debian-artifacts/issues/134
-FROM debian:bullseye-slim
+FROM debian:stable-slim
 LABEL MAINTAINER="Matthew Gabeler-Lee <mgabeler-lee@6river.com>"
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "/app/entrypoint.sh"]
@@ -33,8 +31,14 @@ RUN \
 # TODO: don't use NODE_ENV for non-NodeJS code
 ENV NODE_ENV=production
 # Apps will need DATABASE_URL set externally to a useful value
+# Apps will need PUBSUB_GCLOUD_PROJECT_ID set externally to a useful value
 
-RUN mkdir -p /app
+# This is the default port that would be used if this wasn't specified
+ENV PORT=3000
+EXPOSE 3000/tcp
+
+RUN mkdir -p /app /data
+VOLUME ["/data"]
 WORKDIR /app
 
 COPY .docker-deps/entrypoint.sh /app/

@@ -161,7 +161,8 @@ jobs:
           name: Capture chosen version
           path: .version
       - run: ./mage -v get
-      - run: ./mage -v installCITools
+      # gotestsum is included in the cimg/go image
+      # - run: ./mage -v installCITools
       - run: ./mage -v generate:force
       - setup_remote_docker:
           version: 20.10.11
@@ -178,6 +179,27 @@ jobs:
       - run:
           name: Build multiarch docker images
           command: ./mage -v docker:multiarchBuildAll
+      - run:
+          name: Verify docker images
+          command: |
+            set -xeuo pipefail
+            for plat in amd64 arm64 ; do
+              ./mage -v docker:multiarchLoadArch service $plat
+              docker run --rm --platform linux/$plat --entrypoint /app/service gosix-example-service:$(<.version) --version
+              # fire this one into the background for the smoke test run
+              docker run --name service-smoke-$plat --rm --platform linux/$plat \
+                --env 'DATABASE_URL=sqlite:///data/gosix-example-service.sqlite?_pragma=foreign_keys(1)&_pragma=journal_mode(wal)&_pragma=busy_timeout(10000)&cache=private&_txlock=immediate' \
+                --env 'PUBSUB_GCLOUD_PROJECT_ID=__none__' \
+                gosix-example-service:$(<.version) &
+              pid=$!
+              # can't contact the remote docker directly, so we have to build
+              # the mage binary, copy it over, and exec it
+              CGO_ENABLED=0 ./mage -v -compile magebinary-$plat -goarch $plat
+              docker cp magebinary-$plat service-smoke-$plat:/
+              # this should ask the app to shut down at the end
+              docker exec service-smoke-$plat /magebinary-$plat -v testSmokeCore service localhost:3000
+              wait $pid
+            done
       - run:
           name: Push multiarch docker images
           command: ./mage -v docker:multiarchPushAll
