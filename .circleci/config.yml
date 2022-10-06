@@ -200,7 +200,6 @@ jobs:
               docker exec service-smoke-$plat /magebinary-$plat -v testSmokeCore service localhost:3000
               wait $pid
             done
-          # TODO: actually run the app to verify its default SQLite configuration works
       - run:
           name: Push multiarch docker images
           command: ./mage -v docker:multiarchPushAll
