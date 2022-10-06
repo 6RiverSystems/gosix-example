@@ -31,6 +31,7 @@ RUN \
 # TODO: don't use NODE_ENV for non-NodeJS code
 ENV NODE_ENV=production
 # Apps will need DATABASE_URL set externally to a useful value
+# Apps will need PUBSUB_GCLOUD_PROJECT_ID set externally to a useful value
 
 # This is the default port that would be used if this wasn't specified
 ENV PORT=3000

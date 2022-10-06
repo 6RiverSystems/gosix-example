@@ -187,7 +187,10 @@ jobs:
               ./mage -v docker:multiarchLoadArch service $plat
               docker run --rm --platform linux/$plat --entrypoint /app/service gosix-example-service:$(<.version) --version
               # fire this one into the background for the smoke test run
-              docker run --name service-smoke-$plat --rm --platform linux/$plat --env 'DATABASE_URL=sqlite:///data/gosix-example-service.sqlite?_pragma=foreign_keys(1)&_pragma=journal_mode(wal)&_pragma=busy_timeout(10000)&cache=private&_txlock=immediate' gosix-example-service:$(<.version) &
+              docker run --name service-smoke-$plat --rm --platform linux/$plat \
+                --env 'DATABASE_URL=sqlite:///data/gosix-example-service.sqlite?_pragma=foreign_keys(1)&_pragma=journal_mode(wal)&_pragma=busy_timeout(10000)&cache=private&_txlock=immediate' \
+                --env 'PUBSUB_GCLOUD_PROJECT_ID=__none__' \
+                gosix-example-service:$(<.version) &
               pid=$!
               # can't contact the remote docker directly, so we have to build
               # the mage binary, copy it over, and exec it
