@@ -17,11 +17,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.21
 	github.com/stretchr/testify v1.8.1
-	go.6river.tech/gosix v0.5.60
+	go.6river.tech/gosix v0.5.61
 	golang.org/x/sync v0.1.0
 	golang.org/x/tools v0.4.0
 	golang.org/x/vuln v0.0.0-20220908210932-64dbbd7bba4f
-	google.golang.org/api v0.104.0
+	google.golang.org/api v0.105.0
 	google.golang.org/grpc v1.51.0
 	gotest.tools/gotestsum v1.8.2
 	modernc.org/sqlite v1.20.0
