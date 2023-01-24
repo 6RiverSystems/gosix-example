@@ -22,7 +22,7 @@ require (
 	golang.org/x/tools v0.5.0
 	golang.org/x/vuln v0.0.0-20220908210932-64dbbd7bba4f
 	google.golang.org/api v0.107.0
-	google.golang.org/grpc v1.52.0
+	google.golang.org/grpc v1.52.1
 	gotest.tools/gotestsum v1.9.0
 	modernc.org/sqlite v1.20.2
 	mvdan.cc/gofumpt v0.4.0
