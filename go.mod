@@ -24,7 +24,7 @@ require (
 	google.golang.org/api v0.107.0
 	google.golang.org/grpc v1.52.0
 	gotest.tools/gotestsum v1.9.0
-	modernc.org/sqlite v1.20.2
+	modernc.org/sqlite v1.20.3
 	mvdan.cc/gofumpt v0.4.0
 )
 
