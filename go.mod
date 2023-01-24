@@ -5,7 +5,7 @@ go 1.19
 require (
 	entgo.io/ent v0.11.5
 	github.com/deepmap/oapi-codegen v1.12.4
-	github.com/getkin/kin-openapi v0.112.0
+	github.com/getkin/kin-openapi v0.113.0
 	github.com/gin-gonic/gin v1.8.2
 	github.com/golangci/golangci-lint v1.50.1
 	github.com/google/addlicense v1.1.0
@@ -181,6 +181,7 @@ require (
 	github.com/nishanths/predeclared v0.2.2 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.6 // indirect
+	github.com/perimeterx/marshmallow v1.1.4 // indirect
 	github.com/phayes/checkstyle v0.0.0-20170904204023-bfd46e6a821d // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/polyfloyd/go-errorlint v1.0.5 // indirect
