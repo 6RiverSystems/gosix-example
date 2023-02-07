@@ -57,17 +57,17 @@ func main() {
 		if len(os.Args) == 2 {
 			switch os.Args[1] {
 			case "--help":
-				fmt.Println("mmmbbb does not accept command line arguments")
+				fmt.Println("gosix-example does not accept command line arguments")
 				return
 			case "--version":
-				fmt.Printf("This is mmmbbb version %s running on %s/%s\n",
+				fmt.Printf("This is gosix-example version %s running on %s/%s\n",
 					version.SemrelVersion, runtime.GOOS, runtime.GOARCH)
 				return
 			}
 		}
 
 		if !testModeIgnoreArgs {
-			fmt.Fprintf(os.Stderr, "mmmbbb does not accept command line arguments: %v\n", os.Args[1:])
+			fmt.Fprintf(os.Stderr, "gosix-example does not accept command line arguments: %v\n", os.Args[1:])
 			os.Exit(1)
 		}
 	}
