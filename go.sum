@@ -817,8 +817,8 @@ github.com/zclconf/go-cty v1.8.0/go.mod h1:vVKLxnk3puL4qRAv72AO+W99LUD4da90g3uUA
 github.com/zenazn/goji v0.9.0/go.mod h1:7S9M489iMyHBNxwZnk9/EHS098H4/F6TATF2mIxtB1Q=
 gitlab.com/bosi/decorder v0.2.3 h1:gX4/RgK16ijY8V+BRQHAySfQAb354T7/xQpDB2n10P0=
 gitlab.com/bosi/decorder v0.2.3/go.mod h1:9K1RB5+VPNQYtXtTDAzd2OEftsZb1oV0IrJrzChSdGE=
-go.6river.tech/gosix v0.5.67 h1:owW1Inhx3z9VffgiTMROlfIW9U4AtcWCTHd/24GcjFg=
-go.6river.tech/gosix v0.5.67/go.mod h1:IxwLT0x7uL3SWdu4mhfoz0f+uLqVXaUW/RrBL51zRxA=
+go.6river.tech/gosix v0.7.0 h1:jcGT9oQVv/YzzoXUGJlb5t+Pjq7ZJ+moeBQBm8MBuoQ=
+go.6river.tech/gosix v0.7.0/go.mod h1:kDYQbo5UsB06zWfqO4m3INgpuUe1+t0RnMl/Dh1g+3s=
 go.opencensus.io v0.21.0/go.mod h1:mSImk1erAIZhrmZN+AvHh14ztQfjbGwt4TtuofqLduU=
 go.opencensus.io v0.22.0/go.mod h1:+kGneAE2xo2IficOXnaByMWTGM9T73dGwxeWcUqIpI8=
 go.opencensus.io v0.22.2/go.mod h1:yxeiOL68Rb0Xd1ddK5vPZ/oVn4vY4Ynel7k9FzqtOIw=
