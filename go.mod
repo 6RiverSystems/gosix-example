@@ -19,7 +19,7 @@ require (
 	github.com/stretchr/testify v1.8.1
 	go.6river.tech/gosix v0.8.0
 	golang.org/x/sync v0.1.0
-	golang.org/x/tools v0.5.0
+	golang.org/x/tools v0.6.0
 	golang.org/x/vuln v0.0.0-20220908210932-64dbbd7bba4f
 	google.golang.org/api v0.109.0
 	google.golang.org/grpc v1.53.0
@@ -240,7 +240,7 @@ require (
 	golang.org/x/crypto v0.6.0 // indirect
 	golang.org/x/exp v0.0.0-20220722155223-a9213eeb770e // indirect
 	golang.org/x/exp/typeparams v0.0.0-20221208152030-732eee02a75a // indirect
-	golang.org/x/mod v0.7.0 // indirect
+	golang.org/x/mod v0.8.0 // indirect
 	golang.org/x/net v0.6.0 // indirect
 	golang.org/x/oauth2 v0.4.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
