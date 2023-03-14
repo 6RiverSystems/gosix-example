@@ -3,7 +3,7 @@ module go.6river.tech/gosix-example
 go 1.20
 
 require (
-	entgo.io/ent v0.11.9
+	entgo.io/ent v0.11.10
 	github.com/deepmap/oapi-codegen v1.12.4
 	github.com/getkin/kin-openapi v0.112.0
 	github.com/gin-gonic/gin v1.9.0
@@ -31,7 +31,7 @@ require (
 require (
 	4d63.com/gocheckcompilerdirectives v1.2.1 // indirect
 	4d63.com/gochecknoglobals v0.2.1 // indirect
-	ariga.io/atlas v0.9.1 // indirect
+	ariga.io/atlas v0.9.2-0.20230303073438-03a4779a6338 // indirect
 	cloud.google.com/go v0.110.0 // indirect
 	cloud.google.com/go/compute v1.18.0 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
