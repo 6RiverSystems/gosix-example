@@ -5,7 +5,7 @@ go 1.20
 require (
 	entgo.io/ent v0.12.3
 	github.com/deepmap/oapi-codegen v1.13.0
-	github.com/getkin/kin-openapi v0.117.0
+	github.com/getkin/kin-openapi v0.118.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golangci/golangci-lint v1.53.2
 	github.com/google/addlicense v1.1.1
