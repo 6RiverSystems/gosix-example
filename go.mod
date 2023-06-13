@@ -5,7 +5,7 @@ go 1.20
 require (
 	entgo.io/ent v0.12.3
 	github.com/deepmap/oapi-codegen v1.13.0
-	github.com/getkin/kin-openapi v0.117.0
+	github.com/getkin/kin-openapi v0.118.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golangci/golangci-lint v1.53.2
 	github.com/google/addlicense v1.1.1
@@ -17,11 +17,11 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.22
 	github.com/stretchr/testify v1.8.4
-	go.6river.tech/gosix v0.8.30
+	go.6river.tech/gosix v0.8.31
 	golang.org/x/sync v0.2.0
 	golang.org/x/tools v0.9.3
 	golang.org/x/vuln v0.0.0-20230313161840-8a73a7e4f203
-	google.golang.org/api v0.125.0
+	google.golang.org/api v0.126.0
 	google.golang.org/grpc v1.55.0
 	gotest.tools/gotestsum v1.10.0
 	modernc.org/sqlite v1.23.0
