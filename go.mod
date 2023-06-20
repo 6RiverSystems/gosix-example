@@ -21,7 +21,7 @@ require (
 	golang.org/x/sync v0.2.0
 	golang.org/x/tools v0.9.3
 	golang.org/x/vuln v0.0.0-20230313161840-8a73a7e4f203
-	google.golang.org/api v0.127.0
+	google.golang.org/api v0.128.0
 	google.golang.org/grpc v1.55.0
 	gotest.tools/gotestsum v1.10.0
 	modernc.org/sqlite v1.23.1
