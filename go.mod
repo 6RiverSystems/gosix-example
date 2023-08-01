@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	entgo.io/ent v0.12.3
-	github.com/deepmap/oapi-codegen v1.13.1
+	github.com/deepmap/oapi-codegen v1.13.2
 	github.com/getkin/kin-openapi v0.118.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golangci/golangci-lint v1.53.3
@@ -154,7 +154,7 @@ require (
 	github.com/kulti/thelper v0.6.3 // indirect
 	github.com/kunwardeep/paralleltest v1.0.7 // indirect
 	github.com/kyoh86/exportloopref v0.1.11 // indirect
-	github.com/labstack/echo/v4 v4.10.2 // indirect
+	github.com/labstack/echo/v4 v4.11.1 // indirect
 	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/ldez/gomoddirectives v0.2.3 // indirect
 	github.com/ldez/tagliatelle v0.5.0 // indirect
