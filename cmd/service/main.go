@@ -94,7 +94,7 @@ func NewApp() *app.App {
 			m.SortAndAppend("", ownMigrations...)
 			return nil
 		},
-		InitEnt: func(ctx context.Context, drv *sql.Driver, logger func(args ...interface{}), debug bool) (entcommon.EntClient, error) {
+		InitEnt: func(ctx context.Context, drv *sql.Driver, logger func(args ...interface{}), debug bool) (entcommon.EntClientBase, error) {
 			opts := []ent.Option{
 				ent.Driver(drv),
 				ent.Log(logger),
@@ -102,7 +102,8 @@ func NewApp() *app.App {
 			if debug {
 				opts = append(opts, ent.Debug())
 			}
-			return ent.NewClient(opts...), nil
+			client := ent.NewClient(opts...)
+			return client, nil
 		},
 		WithPubsubClient: true,
 		LoadOASSpec: func(context.Context) (*openapi3.T, error) {
@@ -116,7 +117,7 @@ func NewApp() *app.App {
 		RegisterServices: func(ctx context.Context, reg *registry.Registry, values registry.MutableValues) error {
 			reg.AddService(registry.NewInitializer(
 				"counter-bootstrap",
-				func(ctx context.Context, services *registry.Registry, client_ entcommon.EntClient) error {
+				func(ctx context.Context, services *registry.Registry, client_ entcommon.EntClientBase) error {
 					client := client_.(*ent.Client)
 					// create the default frob counter
 					ec, err := getOrCreateCounterEnt(ctx, client, "frob")

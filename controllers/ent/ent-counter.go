@@ -35,6 +35,7 @@ import (
 	"go.6river.tech/gosix-example/middleware"
 	"go.6river.tech/gosix-example/oas"
 	"go.6river.tech/gosix/db"
+	"go.6river.tech/gosix/ginmiddleware"
 	"go.6river.tech/gosix/logging"
 	"go.6river.tech/gosix/registry"
 )
@@ -54,7 +55,7 @@ func (cc *EntCounterController) Register(registry *registry.Registry, router gin
 	}
 
 	rg := router.Group(apiRoot)
-	rg.Use(middleware.WithTransaction(db.GetDefaultDbName(), &sql.TxOptions{}))
+	rg.Use(ginmiddleware.WithTransaction(middleware.Key(), &sql.TxOptions{}))
 
 	rg.GET("/:name", cc.GetCounter)
 	rg.POST("/:name", cc.CreateCounter)
@@ -65,7 +66,7 @@ func (cc *EntCounterController) Register(registry *registry.Registry, router gin
 
 func (cc *EntCounterController) GetCounter(c *gin.Context) {
 	name := c.Param("name")
-	tx := middleware.Transaction(c, db.GetDefaultDbName())
+	tx := middleware.Transaction(c)
 
 	result, err := tx.Counter.Query().Where(counter.Name(name)).Only(c.Request.Context())
 	if err != nil {
@@ -97,7 +98,7 @@ func (cc *EntCounterController) GetCounter(c *gin.Context) {
 
 func (cc *EntCounterController) CreateCounter(c *gin.Context) {
 	name := c.Param("name")
-	tx := middleware.Transaction(c, db.GetDefaultDbName())
+	tx := middleware.Transaction(c)
 
 	counterId := uuid.New()
 	event := tx.CounterEvent.EventForCounterId(counterId).
@@ -151,7 +152,7 @@ func (cc *EntCounterController) UpsertCounter(c *gin.Context) {
 	}
 	id := bodyObject.Id
 
-	tx := middleware.Transaction(c, db.GetDefaultDbName())
+	tx := middleware.Transaction(c)
 	event := tx.CounterEvent.EventForCounterId(id).
 		SetEventType("upsert").
 		SaveX(c.Request.Context())

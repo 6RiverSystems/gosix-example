@@ -75,7 +75,7 @@ type counterMutationLike interface {
 	ID() (uuid.UUID, bool)
 	SetLastUpdateID(uuid.UUID)
 
-	EntClient() entcommon.EntClient
+	EntClient() entcommon.EntClientBase
 }
 
 func (Counter) Hooks() []ent.Hook {
