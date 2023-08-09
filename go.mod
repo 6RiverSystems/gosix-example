@@ -17,7 +17,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.22
 	github.com/stretchr/testify v1.8.4
-	go.6river.tech/gosix v0.8.44-0.20230809155659-f5eb03f84b53
+	go.6river.tech/gosix v0.9.0
 	golang.org/x/sync v0.3.0
 	golang.org/x/tools v0.12.0
 	golang.org/x/vuln v1.0.0
