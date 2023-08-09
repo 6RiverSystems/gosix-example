@@ -23,6 +23,6 @@ import "go.6river.tech/gosix/ent"
 
 // Custom addons to the Mutation type
 
-func (m *CounterMutation) EntClient() ent.EntClient {
+func (m *CounterMutation) EntClient() ent.EntClientBase {
 	return m.Client()
 }
