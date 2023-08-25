@@ -6,9 +6,17 @@ updates:
       interval: "weekly"
       day: tuesday
     open-pull-requests-limit: 20
+    groups:
+      go-everything:
+        patterns:
+          - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       # Check for updates to GitHub Actions every week
       interval: "weekly"
     open-pull-requests-limit: 20
+    groups:
+      actions-everything:
+        patterns:
+          - "*"
