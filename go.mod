@@ -4,8 +4,8 @@ go 1.20
 
 require (
 	entgo.io/ent v0.12.3
-	github.com/deepmap/oapi-codegen v1.13.4
-	github.com/getkin/kin-openapi v0.118.0
+	github.com/deepmap/oapi-codegen v1.14.0
+	github.com/getkin/kin-openapi v0.119.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golangci/golangci-lint v1.54.2
 	github.com/google/addlicense v1.1.1
@@ -17,7 +17,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.22
 	github.com/stretchr/testify v1.8.4
-	go.6river.tech/gosix v0.9.4
+	go.6river.tech/gosix v0.9.5
 	golang.org/x/sync v0.3.0
 	golang.org/x/tools v0.12.1-0.20230815132531-74c255bcf846
 	golang.org/x/vuln v1.0.1
@@ -134,7 +134,7 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-version v1.6.0 // indirect
-	github.com/hashicorp/hcl v1.0.0 // indirect
+	github.com/hashicorp/hcl v1.0.1-vault-3 // indirect
 	github.com/hashicorp/hcl/v2 v2.13.0 // indirect
 	github.com/hexops/gotextdiff v1.0.3 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
@@ -156,8 +156,6 @@ require (
 	github.com/kulti/thelper v0.6.3 // indirect
 	github.com/kunwardeep/paralleltest v1.0.8 // indirect
 	github.com/kyoh86/exportloopref v0.1.11 // indirect
-	github.com/labstack/echo/v4 v4.11.1 // indirect
-	github.com/labstack/gommon v0.4.0 // indirect
 	github.com/ldez/gomoddirectives v0.2.3 // indirect
 	github.com/ldez/tagliatelle v0.5.0 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
@@ -237,8 +235,6 @@ require (
 	github.com/ultraware/funlen v0.1.0 // indirect
 	github.com/ultraware/whitespace v0.0.5 // indirect
 	github.com/uudashr/gocognit v1.0.7 // indirect
-	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasttemplate v1.2.2 // indirect
 	github.com/xen0n/gosmopolitan v1.2.1 // indirect
 	github.com/yagipy/maintidx v1.0.0 // indirect
 	github.com/yeya24/promlinter v0.2.0 // indirect
