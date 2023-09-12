@@ -13,7 +13,6 @@ require (
 	github.com/jackc/pgx/v5 v5.4.3
 	github.com/magefile/mage v1.15.0
 	github.com/mattn/go-sqlite3 v1.14.17
-	github.com/oapi-codegen/runtime v1.0.0
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/pkg/errors v0.9.1
 	github.com/quasilyte/go-ruleguard/dsl v0.3.22
@@ -22,7 +21,7 @@ require (
 	golang.org/x/sync v0.3.0
 	golang.org/x/tools v0.13.0
 	golang.org/x/vuln v1.0.1
-	google.golang.org/api v0.139.0
+	google.golang.org/api v0.140.0
 	google.golang.org/grpc v1.58.0
 	gotest.tools/gotestsum v1.10.1
 	modernc.org/sqlite v1.25.0
@@ -260,7 +259,7 @@ require (
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20230803162519-f966b187b2e5 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20230822172742-b8732ec3820d // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20230822172742-b8732ec3820d // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230911183012-2d3300fd4832 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
