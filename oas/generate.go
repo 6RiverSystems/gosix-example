@@ -19,4 +19,10 @@
 
 package oas
 
+import (
+	// prevent dependabot's tidying from removing this dependency, which the
+	// generated types will need.
+	_ "github.com/oapi-codegen/runtime"
+)
+
 //go:generate go run github.com/deepmap/oapi-codegen/cmd/oapi-codegen -config oapi-codegen.yaml -package $GOPACKAGE openapi.yaml
