@@ -22,13 +22,13 @@ package pubsub
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"sync"
 	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/render"
-	"github.com/pkg/errors"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -86,7 +86,7 @@ func writeSubscriptions(c *gin.Context, ctx context.Context, i pubsub.Subscripti
 		}
 		if err != nil {
 			// let gin try to report it, won't work if we already started writing results
-			panic(errors.Wrap(err, "Error iterating subscriptions"))
+			panic(fmt.Errorf("Error iterating subscriptions: %w", err))
 		}
 		if !wroteHeader {
 			c.Status(http.StatusOK)
@@ -108,7 +108,7 @@ func writeSubscriptions(c *gin.Context, ctx context.Context, i pubsub.Subscripti
 		c.JSON(http.StatusOK, []interface{}{})
 		_, err := c.Writer.WriteString("\n")
 		if err != nil {
-			panic(errors.Wrap(err, "Failed to write JSON delmiter"))
+			panic(fmt.Errorf("Failed to write JSON delmiter: %w", err))
 		}
 	}
 }
@@ -123,7 +123,7 @@ func writeSubscription(c *gin.Context, ctx context.Context, s pubsub.Subscriptio
 			return
 		}
 
-		panic(errors.Wrapf(err, "Error fetching subscription config for '%s'", s.ID()))
+		panic(fmt.Errorf("Error fetching subscription config for '%s': %w", s.ID(), err))
 	}
 	topicID := config.Topic.ID()
 	// don't write the topic object, it's not meaningful; this won't remove the
@@ -139,7 +139,7 @@ func writeSubscription(c *gin.Context, ctx context.Context, s pubsub.Subscriptio
 		r.WriteContentType(c.Writer)
 	}
 	if err = r.Render(c.Writer); err != nil {
-		panic(errors.Wrapf(err, "Error serializing subscription info to JSON for '%s'", s.ID()))
+		panic(fmt.Errorf("Error serializing subscription info to JSON for '%s': %w", s.ID(), err))
 	}
 }
 
@@ -164,7 +164,7 @@ func (sc *SubscriptionController) GetMessages(c *gin.Context) {
 			return
 		}
 
-		panic(errors.Wrap(err, "Error during subscription configuration"))
+		panic(fmt.Errorf("Error during subscription configuration: %w", err))
 	}
 
 	var message pubsub.Message
@@ -192,7 +192,7 @@ func (sc *SubscriptionController) GetMessages(c *gin.Context) {
 			})
 			return
 		} else {
-			panic(errors.Wrap(err, "Error during receive"))
+			panic(fmt.Errorf("Error during receive: %w", err))
 		}
 	}
 	if message == nil {

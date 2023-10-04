@@ -22,11 +22,11 @@ package pubsub
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/render"
-	"github.com/pkg/errors"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -75,7 +75,7 @@ func (tc *TopicController) GetTopics(c *gin.Context) {
 		}
 		if err != nil {
 			// let gin try to report it, won't work if we already started writing results
-			panic(errors.Wrap(err, "Error iterating topics"))
+			panic(fmt.Errorf("Error iterating topics: %w", err))
 		}
 		if !wroteHeader {
 			c.Status(http.StatusOK)
@@ -89,7 +89,7 @@ func (tc *TopicController) GetTopics(c *gin.Context) {
 		}
 		writeTopic(c, ctx, t, false)
 		if err != nil {
-			panic(errors.Wrapf(err, "Error serializing topic info to JSON for '%s'", t.ID()))
+			panic(fmt.Errorf("Error serializing topic info to JSON for '%s': %w", t.ID(), err))
 		}
 	}
 	if wroteHeader {
@@ -107,7 +107,7 @@ func (tc *TopicController) GetTopic(c *gin.Context) {
 	// and then the detail writer will do it again
 	exists, err := t.Exists(ctx)
 	if err != nil {
-		panic(errors.Wrap(err, "Unable to check for topic existence"))
+		panic(fmt.Errorf("Unable to check for topic existence: %w", err))
 	}
 	if !exists {
 		c.JSON(http.StatusNotFound, gin.H{"id": id})
@@ -125,7 +125,7 @@ func (tc *TopicController) CreateTopic(c *gin.Context) {
 			c.JSON(http.StatusConflict, gin.H{"id": id, "message": "Topic already exists"})
 			return
 		}
-		panic(errors.Wrapf(err, "Failed to create topic '%s'", id))
+		panic(fmt.Errorf("Failed to create topic '%s': %w", id, err))
 	}
 
 	writeTopic(c, ctx, t, true)
@@ -134,7 +134,7 @@ func (tc *TopicController) CreateTopic(c *gin.Context) {
 func writeTopic(c *gin.Context, ctx context.Context, t pubsub.Topic, writeHeader bool) {
 	config, err := t.Config(ctx)
 	if err != nil {
-		panic(errors.Wrapf(err, "Error fetching topic config for '%s'", t.ID()))
+		panic(fmt.Errorf("Error fetching topic config for '%s': %w", t.ID(), err))
 	}
 	r := render.JSON{Data: gin.H{
 		"id":     t.ID(),
@@ -145,7 +145,7 @@ func writeTopic(c *gin.Context, ctx context.Context, t pubsub.Topic, writeHeader
 		r.WriteContentType(c.Writer)
 	}
 	if err = r.Render(c.Writer); err != nil {
-		panic(errors.Wrapf(err, "Error serializing topic info to JSON for '%s'", t.ID()))
+		panic(fmt.Errorf("Error serializing topic info to JSON for '%s': %w", t.ID(), err))
 	}
 }
 
@@ -156,7 +156,7 @@ func (tc *TopicController) GetTopicSubscriptions(c *gin.Context) {
 	id := c.Param("id")
 	t := pubsub.MustDefaultClient().Topic(id)
 	if exists, err := t.Exists(ctx); err != nil {
-		panic(errors.Wrapf(err, "Unable to check for topic existence '%s'", id))
+		panic(fmt.Errorf("Unable to check for topic existence '%s': %w", id, err))
 	} else if !exists {
 		c.JSON(http.StatusNotFound, gin.H{"id": id, "message": "Topic not found"})
 	}
@@ -181,11 +181,11 @@ func (tc *TopicController) CreateSubscription(c *gin.Context) {
 			c.JSON(http.StatusConflict, gin.H{"topic": topicID, "subscription": subID, "message": "Subscription already exists"})
 			return
 		}
-		panic(errors.Wrapf(err, "Failed to create subscription '%s'/'%s'", topicID, subID))
+		panic(fmt.Errorf("Failed to create subscription '%s'/'%s': %w", topicID, subID, err))
 	}
 	_, err = s.EnsureDefaultConfig(ctx)
 	if err != nil {
-		panic(errors.Wrapf(err, "Failed to configure subscription '%s'/'%s'", topicID, subID))
+		panic(fmt.Errorf("Failed to configure subscription '%s'/'%s': %w", topicID, subID, err))
 	}
 
 	writeSubscription(c, ctx, s, true)
@@ -210,10 +210,10 @@ func (tc *TopicController) PublishMessage(c *gin.Context) {
 	t := client.Topic(id)
 	var exists bool
 	if exists, err := t.Exists(ctx); err != nil {
-		panic(errors.Wrapf(err, "Unable to check for topic existence '%s'", id))
+		panic(fmt.Errorf("Unable to check for topic existence '%s': %w", id, err))
 	} else if !exists {
 		if t, err = client.CreateTopic(ctx, id); err != nil {
-			panic(errors.Wrapf(err, "Failed to create topic '%s'", id))
+			panic(fmt.Errorf("Failed to create topic '%s': %w", id, err))
 		}
 	}
 
@@ -222,7 +222,7 @@ func (tc *TopicController) PublishMessage(c *gin.Context) {
 		// TODO: allow sending Attributes via custom headers?
 	}).Get(ctx)
 	if err != nil {
-		panic(errors.Wrapf(err, "Failed to publish message to '%s'", id))
+		panic(fmt.Errorf("Failed to publish message to '%s': %w", id, err))
 	}
 
 	// we aren't going to re-use this object, so it's important to dispose of its

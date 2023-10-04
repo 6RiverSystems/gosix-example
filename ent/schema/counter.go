@@ -21,6 +21,7 @@ package schema
 
 import (
 	"context"
+	"fmt"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/entsql"
@@ -28,7 +29,6 @@ import (
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
 	"github.com/google/uuid"
-	"github.com/pkg/errors"
 
 	"go.6river.tech/gosix-example/ent/util"
 	entcommon "go.6river.tech/gosix/ent"
@@ -91,7 +91,7 @@ func (Counter) Hooks() []ent.Hook {
 				cm := m.(counterMutationLike)
 				id, hasId := cm.ID()
 				if !hasId {
-					return nil, errors.Errorf("Cannot auto-create event for counter %s without id", m.Op())
+					return nil, fmt.Errorf("Cannot auto-create event for counter %s without id", m.Op())
 				}
 
 				cec := cm.EntClient().EntityClient("CounterEvent").CreateEntity()
@@ -106,7 +106,7 @@ func (Counter) Hooks() []ent.Hook {
 				// defaults
 				evtId, ok := evtMut.ID()
 				if !ok {
-					return nil, errors.Errorf("event create mutation should have set ID")
+					return nil, fmt.Errorf("event create mutation should have set ID")
 				}
 				cm.SetLastUpdateID(evtId)
 

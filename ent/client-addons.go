@@ -21,11 +21,11 @@ package ent
 
 import (
 	"context"
+	"fmt"
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
 	"github.com/google/uuid"
-	"github.com/pkg/errors"
 
 	"go.6river.tech/gosix-example/ent/util"
 	entcommon "go.6river.tech/gosix/ent"
@@ -40,7 +40,7 @@ func (c *Client) EntityClient(name string) entcommon.EntityClient {
 	case "CounterEvent":
 		return c.CounterEvent
 	default:
-		panic(errors.Errorf("Invalid entity name '%s'", name))
+		panic(fmt.Errorf("Invalid entity name '%s'", name))
 	}
 }
 
@@ -92,7 +92,7 @@ func (c *Client) DoTx(ctx context.Context, opts *sql.TxOptions, inner func(*Tx) 
 		}
 		if err != nil {
 			if finalErr != nil {
-				finalErr = errors.Wrapf(finalErr, "%s Failed: %s During: %s", op, err.Error(), finalErr.Error())
+				finalErr = fmt.Errorf("%s Failed: %v During: %w", op, err, finalErr)
 			} else {
 				finalErr = err
 			}
