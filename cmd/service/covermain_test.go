@@ -31,6 +31,8 @@ package main
 import (
 	"os"
 	"testing"
+
+	"go.6river.tech/gosix-example/internal/testutils"
 )
 
 func TestCoverMain(t *testing.T) {
@@ -39,6 +41,10 @@ func TestCoverMain(t *testing.T) {
 	// while they run.
 	if os.Getenv("NODE_ENV") != "acceptance" {
 		t.SkipNow()
+	}
+	if os.Getenv("DATABASE_URL") == "" {
+		dbUrl := testutils.SetupDockerTest(t)
+		t.Setenv("DATABASE_URL", dbUrl)
 	}
 	testModeIgnoreArgs = true
 	main()
