@@ -770,12 +770,13 @@ func dockerRunMultiArch(ctx context.Context, cmd string, mode string, arches ...
 		if os.Getenv("CIRCLE_BRANCH") == "main" {
 			// push latest tag on main
 			args = append(args, "-t", gcrBase+baseImage+":latest")
-			// also push to docker hub for builds on main
-			if os.Getenv("DOCKERHUB_USER") != "" {
-				mg.CtxDeps(ctx, Docker{}.HubLogin)
-				args = append(args, "-t", "6river/"+baseTag)
-				args = append(args, "-t", "6river/"+baseImage+":latest")
-			}
+			// TODO: why is dockerhub access broken? CI secrets expired?
+			// // also push to docker hub for builds on main
+			// if os.Getenv("DOCKERHUB_USER") != "" {
+			// 	mg.CtxDeps(ctx, Docker{}.HubLogin)
+			// 	args = append(args, "-t", "6river/"+baseTag)
+			// 	args = append(args, "-t", "6river/"+baseImage+":latest")
+			// }
 		}
 	} else {
 		// base tag is not valid to push, but a useful local thing to use for the
