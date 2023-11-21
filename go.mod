@@ -18,11 +18,11 @@ require (
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/quasilyte/go-ruleguard/dsl v0.3.22
 	github.com/stretchr/testify v1.8.4
-	go.6river.tech/gosix v0.10.23
+	go.6river.tech/gosix v0.10.24
 	golang.org/x/sync v0.5.0
 	golang.org/x/tools v0.15.0
 	golang.org/x/vuln v1.0.1
-	google.golang.org/api v0.150.0
+	google.golang.org/api v0.151.0
 	google.golang.org/grpc v1.59.0
 	gotest.tools/gotestsum v1.11.0
 	modernc.org/sqlite v1.27.0
