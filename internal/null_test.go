@@ -27,7 +27,7 @@
 package internal
 
 import (
-	_ "github.com/deepmap/oapi-codegen/pkg/codegen"
+	_ "github.com/deepmap/oapi-codegen/v2/pkg/codegen"
 	_ "github.com/golangci/golangci-lint/pkg/commands"
 	_ "github.com/google/addlicense"
 	_ "golang.org/x/tools/imports"
