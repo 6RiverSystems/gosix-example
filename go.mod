@@ -5,11 +5,11 @@ go 1.20
 require (
 	entgo.io/ent v0.12.5
 	github.com/deepmap/oapi-codegen/v2 v2.0.0
-	github.com/getkin/kin-openapi v0.120.0
+	github.com/getkin/kin-openapi v0.123.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golangci/golangci-lint v1.55.2
 	github.com/google/addlicense v1.1.1
-	github.com/google/uuid v1.5.0
+	github.com/google/uuid v1.6.0
 	github.com/jackc/pgx/v5 v5.5.2
 	github.com/magefile/mage v1.15.0
 	github.com/mattn/go-sqlite3 v1.14.19
@@ -18,11 +18,11 @@ require (
 	github.com/ory/dockertest/v3 v3.10.0
 	github.com/quasilyte/go-ruleguard/dsl v0.3.22
 	github.com/stretchr/testify v1.8.5-0.20231109004427-db8608ed63f5
-	go.6river.tech/gosix v0.10.34
+	go.6river.tech/gosix v0.10.36
 	golang.org/x/sync v0.6.0
 	golang.org/x/tools v0.17.0
-	golang.org/x/vuln v1.0.2
-	google.golang.org/api v0.156.0
+	golang.org/x/vuln v1.0.3
+	google.golang.org/api v0.157.0
 	google.golang.org/grpc v1.60.1
 	gotest.tools/gotestsum v1.11.0
 	modernc.org/sqlite v1.28.0
@@ -37,7 +37,7 @@ require (
 	cloud.google.com/go/compute v1.23.3 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
 	cloud.google.com/go/iam v1.1.5 // indirect
-	cloud.google.com/go/pubsub v1.33.0 // indirect
+	cloud.google.com/go/pubsub v1.34.0 // indirect
 	github.com/4meepo/tagalign v1.3.3 // indirect
 	github.com/Abirdcfly/dupword v0.0.13 // indirect
 	github.com/Antonboom/errname v0.1.12 // indirect
@@ -111,8 +111,8 @@ require (
 	github.com/go-logr/logr v1.3.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-openapi/inflect v0.19.0 // indirect
-	github.com/go-openapi/jsonpointer v0.20.0 // indirect
-	github.com/go-openapi/swag v0.22.4 // indirect
+	github.com/go-openapi/jsonpointer v0.20.2 // indirect
+	github.com/go-openapi/swag v0.22.8 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.16.0 // indirect
@@ -296,9 +296,9 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto v0.0.0-20231212172506-995d672761c0 // indirect
+	google.golang.org/genproto v0.0.0-20240102182953-50ed04b92917 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240102182953-50ed04b92917 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240102182953-50ed04b92917 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240116215550-a9fa1716bcac // indirect
 	google.golang.org/protobuf v1.32.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
