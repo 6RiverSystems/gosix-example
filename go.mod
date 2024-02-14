@@ -1,6 +1,6 @@
 module go.6river.tech/gosix-example
 
-go 1.20
+go 1.21
 
 require (
 	entgo.io/ent v0.13.0
