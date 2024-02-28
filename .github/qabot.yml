@@ -1,5 +1,0 @@
-_extends: .github
-papersPlease:
-    isEnabled: false
-commitMessageValidation:
-    isEnabled: true

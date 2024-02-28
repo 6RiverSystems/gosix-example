@@ -1,9 +1,0 @@
-__debug_bin
-*.sqlite3*
-coverage.out
-coverage.html
-bin
-.version
-**/debug.test
-tools
-magebinary-*
